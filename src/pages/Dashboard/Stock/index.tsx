@@ -1,49 +1,45 @@
 import React from 'react';
 import { ColumnChart } from 'bizcharts';
-import List from './list';
+import PrintList from './printlist';
 
 const data = [
   {
-    type: '矿机1',
+    type: '控制器',
     number: 1348,
   },
   {
-    type: '矿机2',
+    type: '主控板',
     number: 2562,
   },
   {
-    type: '矿机3',
+    type: '控制器底板',
     number: 2631,
   },
   {
-    type: '矿机4',
+    type: '计算板',
     number: 2445,
   },
   {
-    type: '矿机5',
+    type: '风扇',
     number: 2483,
   },
   {
-    type: '矿机6',
+    type: '电源',
     number: 2382,
   },
   {
-    type: '矿机7',
+    type: '电源线',
     number: 2389,
-  },
-  {
-    type: '矿机8',
-    number: 2348,
   },
 ];
 
 const Demo = () => {
   return (
-    <><List /><ColumnChart
+    <><PrintList /><ColumnChart
       data={data}
       title={{
         visible: true,
-        text: '矿机库存数量对比图',
+        text: '',
       }}
       autoFit
       padding="auto"
@@ -54,7 +50,7 @@ const Demo = () => {
           alias: '类别',
         },
         sales: {
-          alias: '(台)',
+          alias: '(个)',
         },
       }}
     />
