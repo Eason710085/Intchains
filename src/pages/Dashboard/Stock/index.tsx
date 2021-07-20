@@ -1,6 +1,7 @@
 import React from 'react';
-import { ColumnChart } from 'bizcharts';
-import PrintList from './printlist';
+// import { ColumnChart } from 'bizcharts';
+// import PrintList from './printlist';
+import EditedTable from './EditedTable';
 
 const data = [
   {
@@ -35,28 +36,35 @@ const data = [
 
 const Demo = () => {
   return (
-    <><PrintList /><ColumnChart
-      data={data}
-      title={{
-        visible: true,
-        text: '',
-      }}
-      autoFit
-      padding="auto"
-      xField="type"
-      yField="number"
-      meta={{
-        type: {
-          alias: '类别',
-        },
-        sales: {
-          alias: '(个)',
-        },
-      }}
-    />
-    </>
+    <EditedTable />
   );
 };
+
+// const Demo = () => {
+//   return (
+//     <><PrintList /><ColumnChart
+//       data={data}
+//       title={{
+//         visible: true,
+//         text: '',
+//       }}
+//       autoFit
+//       padding="auto"
+//       xField="type"
+//       yField="number"
+//       meta={{
+//         type: {
+//           alias: '类别',
+//         },
+//         sales: {
+//           alias: '(个)',
+//         },
+//       }}
+//     />
+//     </>
+//   );
+// };
+
 
 export default Demo;
 

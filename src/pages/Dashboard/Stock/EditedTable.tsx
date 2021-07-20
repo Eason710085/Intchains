@@ -4,7 +4,6 @@ import { EditableProTable } from '@ant-design/pro-table';
 import ProField from '@ant-design/pro-field';
 import { ProFormRadio } from '@ant-design/pro-form';
 import ProCard from '@ant-design/pro-card';
-import Logistics from '../MinerLogisticsManage';
 
 const waitTime = (time = 100) => {
   return new Promise((resolve) => {
@@ -14,56 +13,55 @@ const waitTime = (time = 100) => {
   });
 };
 
-type DataSourceType = {
+interface DataSourceType {
   id: React.Key;
-  createDate?: string;
-  name?: string;
-  tel?: number;
-  departure?: string;
-  arrive?: string;
-  commodity?: string;
-  orderId?: number;
+  title?: string;
   number?: number;
-  shippingFee?: number;
-  children?: DataSourceType[];
-};
+  note?: string;
+}
 
 const defaultData: DataSourceType[] = [
   {
-    id: '1',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 30,
+    id: 15,
+    title: '控制器',
+    number: 1348,
+    note: '',
   },
   {
-    id: '2',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 40,
+    id: 23,
+    title: '主控板',
+    number: 2562,
+    note: '',
   },
   {
-    id: '3',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
+    id: 33,
+    title: '控制器底板',
+    number: 2631,
+    note: '',
+  },
+  {
+    id: 34,
+    title: '计算板',
+    number: 2445,
+    note: '',
+  },
+  {
+    id: 55,
+    title: '风扇',
+    number: 2483,
+    note: '',
+  },
+  {
+    id: 66,
+    title: '电源',
+    number: 2382,
+    note: '',
+  },
+  {
+    id: 87,
+    title: '电源线',
+    number: 2389,
+    note: '',
   },
 ];
 
@@ -74,78 +72,31 @@ export default () => {
 
   const columns: Array<ProColumns<DataSourceType>> = [
     {
-      title: '日期',
-      dataIndex: 'createDate',
-      valueType: 'date',
-      width: '5%',
-    },
-    {
-      title: '收件人',
-      dataIndex: 'name',
-      width: '5%',
-    },
-    {
-      title: '联系电话',
-      dataIndex: 'tel',
-      width: '5%',
-    },
-    {
-      title: '出发地',
-      dataIndex: 'departure',
-      width: '10%',
-    },
-    {
-      title: '到达地',
-      dataIndex: 'arrive',
-      width: '10%',
-    },
-    {
-      title: '商品名称',
-      dataIndex: 'commodity',
-      width: '7%',
+      title: '产品名称',
+      dataIndex: 'title',
       formItemProps: (form, { rowIndex }) => {
         return {
           rules: rowIndex > 2 ? [{ required: true, message: '此项为必填项' }] : [],
         };
       },
+      // // 第二行不允许编辑
+      // editable: (text, record, index) => {
+      //   return index !== 0;
+      // },
+      width: '30%',
     },
     {
-      title: '购买数量',
+      title: '数量',
       dataIndex: 'number',
-      width: '6%',
-    },
-    {
-      title: '运费',
-      dataIndex: 'shippingFee',
-      width: '6%',
     },
     {
       title: '备注',
       dataIndex: 'note',
-      width: '6%',
     },
-    // {
-    //   title: '物流状态',
-    //   key: 'shippingStatus',
-    //   dataIndex: 'shippingStatus',
-    //   valueType: 'select',
-    //   width: '10%',
-    //   valueEnum: {
-    //     // all: { text: '全部', status: 'Default' },
-    //     open: {
-    //       text: '未发货',
-    //       status: 'false',
-    //     },
-    //     closed: {
-    //       text: '已发货',
-    //       status: 'true',
-    //     },
-    //   },
-    // },
     {
       title: '操作',
       valueType: 'option',
-      width: '10%',
+      width: 200,
       render: (text, record, _, action) => [
         <a
           key="editable"
@@ -168,16 +119,16 @@ export default () => {
   ];
 
   return (
-    <><Logistics />
+    <>
       <EditableProTable<DataSourceType>
         rowKey="id"
-        headerTitle="订单管理"
+        headerTitle="产品库存"
         maxLength={5}
         recordCreatorProps={
           position !== 'hidden'
             ? {
               position: position as 'top',
-              record: () => ({ id: (Math.random() * 1000000).toFixed(0) }),
+              record: () => ({ id: (Math.random() * 10000).toFixed(0) }),
             }
             : false
         }
@@ -207,7 +158,7 @@ export default () => {
         columns={columns}
         request={async () => ({
           data: defaultData,
-          total: 3,
+          total: 100,
           success: true,
         })}
         value={dataSource}
@@ -222,7 +173,7 @@ export default () => {
           onChange: setEditableRowKeys,
         }}
       />
-      <ProCard title="表格数据(Json格式)" headerBordered collapsible defaultCollapsed>
+      <ProCard title="库存数据(Json格式)" headerBordered collapsible defaultCollapsed>
         <ProField
           fieldProps={{
             style: {
