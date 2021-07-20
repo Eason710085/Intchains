@@ -8,27 +8,27 @@ const asideMenuConfig = [
     icon: 'dashboard',
     children: [
       {
-        name: '矿机库存管理',
+        name: '库存',
         path: '/Dashboard/Stock',
         icon: 'list',
       },
       {
-        name: '矿机订单管理',
+        name: '订单管理',
         path: '/Dashboard/MinerOrder',
         icon: 'list',
       },
       {
-        name: '矿机物流管理',
+        name: '物流管理',
         path: '/Dashboard/MinerLogisticsManage',
         icon: 'list',
       },
+      // {
+      //   name: '矿机退货管理',
+      //   path: '/Dashboard/OrderReturn',
+      //   icon: 'list',
+      // },
       {
-        name: '矿机退货管理',
-        path: '/Dashboard/OrderReturn',
-        icon: 'list',
-      },
-      {
-        name: '销售数据分析',
+        name: '销售数据',
         path: '/Dashboard/Profit',
         icon: 'list',
       },

@@ -14,7 +14,7 @@ const waitTime = (time = 100) => {
   });
 };
 
-type DataSourceType = {
+interface DataSourceType {
   id: React.Key;
   createDate?: string;
   name?: string;
@@ -26,7 +26,8 @@ type DataSourceType = {
   number?: number;
   shippingFee?: number;
   children?: DataSourceType[];
-};
+}
+
 
 const defaultData: DataSourceType[] = [
   {
@@ -55,6 +56,54 @@ const defaultData: DataSourceType[] = [
   },
   {
     id: '3',
+    createDate: '2021/06/11',
+    name: '张三',
+    tel: 12345678765,
+    departure: '中国上海市浦东新区张江',
+    arrive: '江苏省苏州市市中心',
+    commodity: '电路板',
+    orderId: 1222121,
+    number: 3,
+    shippingFee: 50,
+  },
+  {
+    id: '4',
+    createDate: '2021/06/11',
+    name: '张三',
+    tel: 12345678765,
+    departure: '中国上海市浦东新区张江',
+    arrive: '江苏省苏州市市中心',
+    commodity: '电路板',
+    orderId: 1222121,
+    number: 3,
+    shippingFee: 50,
+  },
+  {
+    id: '5',
+    createDate: '2021/06/11',
+    name: '张三',
+    tel: 12345678765,
+    departure: '中国上海市浦东新区张江',
+    arrive: '江苏省苏州市市中心',
+    commodity: '电路板',
+    orderId: 1222121,
+    number: 3,
+    shippingFee: 50,
+  },
+  {
+    id: '6',
+    createDate: '2021/06/11',
+    name: '张三',
+    tel: 12345678765,
+    departure: '中国上海市浦东新区张江',
+    arrive: '江苏省苏州市市中心',
+    commodity: '电路板',
+    orderId: 1222121,
+    number: 3,
+    shippingFee: 50,
+  },
+  {
+    id: '7',
     createDate: '2021/06/11',
     name: '张三',
     tel: 12345678765,

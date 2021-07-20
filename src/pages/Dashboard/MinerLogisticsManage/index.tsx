@@ -1,9 +1,10 @@
 import React from 'react';
-import { message, Card } from 'antd';
+import { message } from 'antd';
 import ProForm, {
   ProFormText,
   ProFormDatePicker,
 } from '@ant-design/pro-form';
+import ProCard from '@ant-design/pro-card';
 
 const waitTime = (time = 100) => {
   return new Promise((resolve) => {
@@ -15,11 +16,19 @@ const waitTime = (time = 100) => {
 
 const Logistics = () => {
   return (
-    <Card>
+    <ProCard
+      bordered
+    >
       <ProForm<{
-        name: string;
-        company?: string;
-        useMode?: string;
+        createDate?: string;
+        name?: string;
+        tel?: number;
+        departure?: string;
+        arrive?: string;
+        commodity?: string;
+        orderId?: number;
+        number?: number;
+        shippingFee?: number;
       }>
         onFinish={async () => {
           await waitTime(10);
@@ -54,19 +63,19 @@ const Logistics = () => {
           />
           <ProFormText
             width="md"
-            name="shipAddr"
+            name="departure"
             label="出发地"
             placeholder="请输入地点"
           />
           <ProFormText
             width="md"
-            name="ordrAddr"
+            name="arrive"
             label="到达地"
             placeholder="请输入地点"
           />
           <ProFormText
             width="md"
-            name="type"
+            name="commodity"
             label="商品名称"
             placeholder="请输入商品名称"
           />
@@ -84,7 +93,7 @@ const Logistics = () => {
           />
           <ProFormText
             width="md"
-            name="fare"
+            name="shippingFee"
             label="运费"
             placeholder="请输入运费"
           />
@@ -96,7 +105,7 @@ const Logistics = () => {
           />
         </ProForm.Group>
       </ProForm>
-    </Card>
+    </ProCard>
   );
 };
 
