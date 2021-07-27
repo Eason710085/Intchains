@@ -30,8 +30,9 @@ const Logistics = () => {
         number?: number;
         shippingFee?: number;
       }>
-        onFinish={async () => {
+        onFinish={async (values) => {
           await waitTime(10);
+          console.log(values);
           message.success('提交成功');
         }}
         params={{}}

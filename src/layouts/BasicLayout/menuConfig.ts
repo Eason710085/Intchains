@@ -18,7 +18,7 @@ const asideMenuConfig = [
         icon: 'list',
       },
       {
-        name: '物流管理',
+        name: ' 新增订单',
         path: '/Dashboard/MinerLogisticsManage',
         icon: 'list',
       },

@@ -1,7 +1,0 @@
-{
-    "Miner1" : [
-        {"name": "Miner1", "number": "100"},
-        {"name": "Miner2", "number": "200"},
-        {"name": "Miner3", "number": "300"}
-    ]
-}

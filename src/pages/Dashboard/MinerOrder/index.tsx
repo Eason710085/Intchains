@@ -54,66 +54,6 @@ const defaultData: DataSourceType[] = [
     number: 3,
     shippingFee: 40,
   },
-  {
-    id: '3',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
-  },
-  {
-    id: '4',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
-  },
-  {
-    id: '5',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
-  },
-  {
-    id: '6',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
-  },
-  {
-    id: '7',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 50,
-  },
 ];
 
 export default () => {
@@ -173,24 +113,6 @@ export default () => {
       dataIndex: 'note',
       width: '6%',
     },
-    // {
-    //   title: '物流状态',
-    //   key: 'shippingStatus',
-    //   dataIndex: 'shippingStatus',
-    //   valueType: 'select',
-    //   width: '10%',
-    //   valueEnum: {
-    //     // all: { text: '全部', status: 'Default' },
-    //     open: {
-    //       text: '未发货',
-    //       status: 'false',
-    //     },
-    //     closed: {
-    //       text: '已发货',
-    //       status: 'true',
-    //     },
-    //   },
-    // },
     {
       title: '操作',
       valueType: 'option',
@@ -265,6 +187,7 @@ export default () => {
           type: 'multiple',
           editableKeys,
           onSave: async (rowKey, data, row) => {
+            // eslint-disable-next-line no-console
             console.log(rowKey, data, row);
             await waitTime(100);
           },
