@@ -1,7 +1,7 @@
 矿机仓库管理系统
 
 环境配置：
-1. 安装nodejs
+1. 安装nodejs， 本项目使用的npm版本为6.14.13，node版本为14.17.3
 2. 安装飞冰框架：https://alibaba.github.io/ice/ 或在Vscode中安装AppWorks组件
 3. 使用Fushion框架
 4. 安装ProComponents 组件 npm i @ant-design/pro-table --save
