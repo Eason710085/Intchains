@@ -13,7 +13,7 @@ const asideMenuConfig = [
         icon: 'list',
       },
       {
-        name: '订单管理',
+        name: '订单',
         path: '/Dashboard/MinerOrder',
         icon: 'list',
       },
@@ -22,11 +22,6 @@ const asideMenuConfig = [
         path: '/Dashboard/MinerLogisticsManage',
         icon: 'list',
       },
-      // {
-      //   name: '矿机退货管理',
-      //   path: '/Dashboard/OrderReturn',
-      //   icon: 'list',
-      // },
       {
         name: '销售数据',
         path: '/Dashboard/Profit',

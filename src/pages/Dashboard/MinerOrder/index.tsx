@@ -42,18 +42,6 @@ const defaultData: DataSourceType[] = [
     number: 3,
     shippingFee: 30,
   },
-  {
-    id: '2',
-    createDate: '2021/06/11',
-    name: '张三',
-    tel: 12345678765,
-    departure: '中国上海市浦东新区张江',
-    arrive: '江苏省苏州市市中心',
-    commodity: '电路板',
-    orderId: 1222121,
-    number: 3,
-    shippingFee: 40,
-  },
 ];
 
 export default () => {
@@ -187,9 +175,8 @@ export default () => {
           type: 'multiple',
           editableKeys,
           onSave: async (rowKey, data, row) => {
-            // eslint-disable-next-line no-console
             console.log(rowKey, data, row);
-            await waitTime(100);
+            await waitTime(10);
           },
           onChange: setEditableRowKeys,
         }}

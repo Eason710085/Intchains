@@ -20,10 +20,6 @@ const routerConfig: IRouterConfig[] = [
         path: '/Dashboard/MinerLogisticsManage',
         component: MinerLogisticsManage,
       },
-      // {
-      //   path: '/Dashboard/OrderReturn',
-      //   component: OrderReturn,
-      // },
       {
         path: '/Dashboard/profit',
         component: Profit,

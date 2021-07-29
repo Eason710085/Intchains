@@ -40,7 +40,7 @@ const Logistics = () => {
           await waitTime(10);
           return {
             name: '',
-            useMode: 'chapter',
+            useMode: '',
           };
         }}
       >
