@@ -1,5 +1,11 @@
 矿机仓库管理系统
 
+{
+项目完整代码：
+链接：https://pan.baidu.com/s/1DxetzJ1AUQ7zWYdv9STevA 
+提取码：intc
+}
+
 环境配置：
 1. 安装nodejs， 本项目使用的npm版本为6.14.13，node版本为14.17.3
 2. 安装飞冰框架：https://alibaba.github.io/ice/ 或在Vscode中安装AppWorks组件
